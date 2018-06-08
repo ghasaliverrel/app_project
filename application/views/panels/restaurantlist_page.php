@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <html>
 <head>
 	<title>FoodSteps - Restaurant List</title>
@@ -38,7 +37,7 @@
         			<img src="<?=$row->picture?>" class="img-responsive">
       		</div>
       		<div class="col-md-6 col-sm-6 details-text">
-           		<div class="cor">
+           		<div class="sor">
        				<h2><?=$row->name_partner?></h2>
        				<p><?=$row->description?></p>
        				<address>

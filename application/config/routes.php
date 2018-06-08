@@ -52,5 +52,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'product';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-//$route['company/(.*)'] = "fcl/index/$1";
->>>>>>> b84a8b3d73b29d136c1438f8020bdd4698d591f3

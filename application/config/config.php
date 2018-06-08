@@ -521,4 +521,3 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
->>>>>>> b84a8b3d73b29d136c1438f8020bdd4698d591f3
