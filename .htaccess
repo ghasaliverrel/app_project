@@ -1,8 +1,9 @@
-Options +FollowSymLinks
+<IfModule mod_rewrite.c>
+RewriteEngine On
 Options -Indexes
-DirectoryIndex index.php
-RewriteEngine on
-RewriteCond $1 !^(index\.php|assets|images|js|css|uploads|favicon.png)
-RewriteCond %(REQUEST_FILENAME) !-f
-RewriteCond %(REQUEST_FILENAME) !-d
-RewriteRule ^(.*)$ ./index.php/$1 [L]
+RewriteBase /resource_center
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /app_project/index.php/$1 [L]
+RewriteRule ^(\.editorconfig|contributing\.md|readme\.rst|\.gitignore|user_guide|license\.txt|composer\.json) - [F,L,NC]
+</IfModule>
