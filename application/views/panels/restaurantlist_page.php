@@ -32,24 +32,24 @@
          <?php
          foreach ($tenants as $row) {
          ?>
-			<div class="item active left row">
-      		<div class="col-md-6 col-sm-6 left-images">
-        			<img src="<?=$row->picture?>" class="img-responsive">
-      		</div>
-      		<div class="col-md-6 col-sm-6 details-text">
-           		<div class="sor">
-       				<h2><?=$row->name_partner?></h2>
-       				<p><?=$row->description?></p>
-       				<address>
-                   	<strong>Place: </strong>
-                   	<?=$row->address_partner?>
-                   	<br>
-                   	<!-- <strong>Time: </strong>
-                   	07:30pm -->
-                   </address>
-             		<a class="btn btn-imfo btn-read-more" href="events-details.html">Read more</a>
-           		</div>
-      	   </div>
+			<div class="item row">
+	      		<div class="col-md-6 left-images">
+	        			<img src="<?=$row->picture?>" class="img-responsive">
+	      		</div>
+	      		<div class="col-md-6 details-text">
+	           		<div class="sor">
+	       				<h2 class="card-title"><?=$row->name_partner?></h2>
+	       				<p class="card-text"><?=$row->description?></p>
+	       				<address>
+	                   	<strong>Place: </strong>
+	                   	<?=$row->address_partner?>
+	                   	<br>
+	                   	<!-- <strong>Time: </strong>
+	                   	07:30pm -->
+	                   </address>
+	             		<a class="btn btn-imfo btn-read-more" href="events-details.html">Read more</a>
+	           		</div>
+	      	   	</div>
     		</div>
          <?php 
          }

@@ -308,7 +308,7 @@
 	border: none;
 }
 
-.content-boxs .card-title{
+.card-title{
 	font-family: calligraffiti;
 }
 
@@ -402,12 +402,9 @@ input[type=time]{
   width: 40%;
 }
 
-
-.details-text {
-    border-right: 2px solid #841b2d;
-}
 .details-text {
     background-color: rgba(14, 4, 4, 0.70);
+    border-radius: 30px;
     border-right: 2px solid #A87F41;
     padding: 20px 20px 30px 30px;
     overflow: auto;
@@ -437,20 +434,28 @@ input[type=time]{
 }
 
 .left-images img {
-    height: 308px;
+    height: 100%;
     width: 100%;
+    border-radius: 10px;
 }
 .left-images{
-    padding: 0px;
+    /*padding-top:10px;*/
 }
 
+.item{
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
 
 .details-text {
+    width: 150px;
+    height: 100%;
     background-color: rgba(14, 4, 4, 0.70);
-    border-radius: 20px;
-    border-right: 2px solid #A87F41;
-    padding: 20px 20px 30px 30px;
-    overflow: auto;
+    border-radius: 10px;/*
+    border-right: 2px solid #A87F41;*/
+    /*padding: 20px 20px 30px 30px;*/
+    /*overflow: auto;*/
 }
 
 .details-text p {
