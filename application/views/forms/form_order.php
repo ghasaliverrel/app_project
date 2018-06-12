@@ -30,7 +30,7 @@
 				<div class="heading">
 					<p>Reservation</p>
 				</div>
-	            <div class="form content-form" style="margin-left: 58.49px">
+	            <div class="form content-forms" style="margin-left: 58.49px">
 	                <form>
 	    				<div class="row">
 	    				    <div class="col-sm-6">
