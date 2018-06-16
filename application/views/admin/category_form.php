@@ -57,7 +57,7 @@
 				    	<label for="inputCategoryDesc" class="col-sm-4 col-form-label">Category Description</label>
 				    	<div class="col-sm-8">
 				      		<!-- <input type="text" name="partnerCategory" class="form-control" value="<?=(isset($categories))?$categories[0]->description:set_value('description')?>"> -->
-				      		<textarea id="textCategory" type="text" class="form-control category-input" name="categoryDescription" rows="5"><?=(isset($categories))?$categories[0]->description:set_value('description')?></textarea>
+				      		<textarea id="textCategory" type="text" class="form-control category-input" name="categoryDescription" rows="5"><?=(isset($categories))?$categories[0]->description_category:set_value('description')?></textarea>
 				    	</div>
 				  	</div>
 
@@ -73,7 +73,7 @@
                         <?php $image_preview = base_url()."assets/img/no-images.png"; ?>
                         <label for="imagePreview" class="col-sm-4 col-form-label">Preview</label>
                         <div class="col-sm-8">
-                            <img style="width: 200px; --aspect-ratio-w: 4; --aspect-ratio-h: 3;" id="imgPreviewPicture" src="<?=(isset($categories))?$categories[0]->picture:$image_preview?>" class="profile_pic_cont" />
+                            <img style="width: 200px; --aspect-ratio-w: 4; --aspect-ratio-h: 3;" id="imgPreviewPicture" src="<?=(isset($categories))?$categories[0]->picture_category:$image_preview?>" class="profile_pic_cont" />
                         </div>
                     </div>            
 

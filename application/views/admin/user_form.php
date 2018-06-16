@@ -64,10 +64,16 @@
 				  	<div class="form-group row">
                         <label for="inputUserRole" class="col-sm-4 col-form-label">User Role</label>
                         <div class="col-sm-8">  
-                            <?php    
-                                $selected=(isset($users))?$users[0]->role_id:'';
-                                echo form_dropdown('userRole', $roles, $selected,'class="form-control dropdown-vendor category-input"');
-                             ?>
+                            <?php 
+                            	if(!isset($users)){    
+	                                $selected=(isset($users))?$users[0]->role_id:'';
+	                                echo form_dropdown('userRole', $roles, $selected,'class="form-control dropdown-vendor category-input"');
+	                            } else {
+                            ?>
+                            <input type="text" name="userRole" class="form-control category-input" value="<?=(isset($users))?$users[0]->role_id:set_value('userRole')?>">
+                            <?php
+                         	}
+                            ?>
                         </div>
                     </div>
 

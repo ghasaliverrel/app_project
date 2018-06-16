@@ -14,13 +14,10 @@
 		    	<!-- Right Float Link -->
 		    	 <ul class="navbar-nav ml-auto brand-links">
 				    <li class="nav-item brand-link">
-			        	<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			        	<a class="nav-link" href="<?=base_url()?>panels/home">Home <span class="sr-only">(current)</span></a>
 			      	</li>
 			      	<li class="nav-item brand-link">
 			        	<a class="nav-link" href="<?=base_url()?>panels/product">Explore</a>
-			      	</li>
-			      	<li class="nav-item brand-link">
-			        	<a class="nav-link" href="#">About</a>
 			      	</li>
 				  </ul>
 		  	</div>
@@ -34,12 +31,12 @@
          ?>
 			<div class="item row">
 	      		<div class="col-md-4 left-images">
-	        		<img src="<?=$row->picture?>" class="img-responsive img-thumbnail">
+	        		<img src="<?=$row->picture_partner?>" class="img-responsive img-thumbnail">
 	      		</div>
-	      		<div class="col-md-8 details-text">
+	      		<div class="col-md-7 details-text">
 	           		<div class="box">
 	       				<h2 class="card-title partner-title"><?=$row->name_partner?></h2>
-	       				<p class="card-text"><?=$row->description?></p>
+	       				<p class="card-text"><?=$row->description_partner?></p>
 	       				<address class="card-text">
 		                   	<strong>Address: </strong>
 		                   	<?=$row->address_partner?>
@@ -47,7 +44,8 @@
 		                   	<!-- <strong>Time: </strong>
 		                   	07:30pm -->
 	                    </address>
-	             		<a class="btn btn-imfo btn-read-more card-body" href="events-details.html"><strong>Eat at <?=strtolower($row->name_partner)?> now! >></strong></a>
+	             		<a href="<?=base_url()?>panels/product/view_spesific/<?=$row->id_partner?>" class="btn btn-light card-text">More Information</a>
+	             		<a href="<?=base_url()?>panels/product/order/<?=$row->id_partner?>" class="btn btn-light card-text">Booking now!</a>
 	           		</div>
 	      	   	</div>
     		</div>

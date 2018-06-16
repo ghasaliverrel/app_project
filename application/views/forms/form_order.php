@@ -14,10 +14,10 @@
 		    	<!-- Right Float Link -->
 		    	 <ul class="navbar-nav ml-auto brand-links">
 				    <li class="nav-item brand-link">
-			        	<a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+			        	<a class="nav-link" href="<?=base_url()?>panels/home">Home <span class="sr-only">(current)</span></a>
 			      	</li>
 			      	<li class="nav-item brand-link">
-			        	<a class="nav-link" href="#">Register</a>
+			        	<a class="nav-link" href="<?=base_url()?>panels/product">Explore</a>
 			      	</li>
 				  </ul>
 		  	</div>
@@ -30,62 +30,49 @@
 				<div class="heading">
 					<p>Reservation</p>
 				</div>
-	            <div class="form content-forms" style="margin-left: 58.49px">
-	                <form>
-	    				<div class="row">
-	    				    <div class="col-sm-6">
-	                            <div class="form-group row">
-	                                <label for="inputAppName" class="col-sm-4 col-form-label">Name</label>
-	                                <div class="col-sm-8">
-	                                    <input type="text" class="form-control" placeholder="Type Your Name">
-	                                </div>
-	                            </div>
-	                            <div class="form-group row">
-	                                <label for="inputAppPackage" class="col-sm-4 col-form-label">Name of Restaurant</label>
-	                                <div class="col-sm-8">
-	                                    <input type="text" class="form-control" placeholder="Type Your Choice of Restaurant">
-	                                </div>
-	                            </div>
-	                            <div class="form-group row">
-	                                <label for="inputAppVersion" class="col-sm-4 col-form-label">Phone Number</label>
-	                                <div class="col-sm-8">
-	                                    <input type="text" class="form-control" placeholder="Type Your Phone Number">
-	                                </div>
-	                            </div>
-	                            <div class="form-group row">
-	                                <label for="inputAppSecret" class="col-sm-4 col-form-label">Amount of People</label>
-	                                <div class="col-sm-8">
-	                                    <input type="number" class="form-control">
-	                                </div>
-	                            </div>            
-	                        </div>	
-						
-	    					<div class="col-sm-6">
-	                            <div class="form-group row">
-	                                <label for="inputAppName" class="col-sm-4 col-form-label">Restaurant Name</label>
-	                                <div class="col-sm-8">
-	                                    <input type="text" class="form-control" placeholder="Type Restaurant Name">
-	                                </div>
-	                            </div>
-	                            <div class="form-group row">
-	                                <label for="inputAppPackage" class="col-sm-4 col-form-label">Reservation Time</label>
-	                                <div class="col-sm-8">
-	                                    <input type="time" class="form-control">
-	                                </div>
-	                            </div>
-	                            <div class="form-group row">
-	                                <label for="inputAppVersion" class="col-sm-4 col-form-label">Food Order in Advance</label>
-	                                <div class="col-sm-8">
-	                                    <input type="text" class="form-control" placeholder="You want to order food in advance?">
-	                                </div>
-	                            </div>        
-	    					</div>
-	                    </div>
+	            <div class="form content-forms card-text" style="margin-left: 58.49px">
+	                <?=form_open('panels/product/insert_order/'.$tenants[0]->id_partner)?>
+	                	<div class="form-group row">
+                            <label for="inputPartnerName" class="col-sm-4 col-form-label">Name of Restaurant</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control category-input" name="partnerName" placeholder="Type Your Choice of Restaurant" readonly="" value="<?=(isset($tenants))?$tenants[0]->name_partner:set_value('partnerName')?>">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputBookingCount" class="col-sm-4 col-form-label">Amount of People</label>
+                            <div class="col-sm-8">
+                                <input type="number" name="bookingCount" class="form-control category-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputBookingDate" class="col-sm-4 col-form-label">Reservation Date</label>
+                            <div class="col-sm-8">
+                                <input type="date" name="bookingDate" class="form-control category-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputBookingTime" class="col-sm-4 col-form-label">Reservation Time</label>
+                            <div class="col-sm-8">
+                                <input type="time" name="bookingTime" class="form-control category-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="inputBookingMenu" class="col-sm-4 col-form-label">Food Order in Advance</label>
+                            <div class="col-sm-8">
+                                <?php
+	                                echo form_dropdown('positionName', $positions, '','class="form-control dropdown-vendor category-input"');
+	                             ?>
+                            </div>
+                        </div>
 
 	                    <div class="save-button">
-	                        <button type="button" class="btn btn-primary" style="width: 25%;">Save</button>
+	                        <button type="submit" class="btn btn-primary" style="width: 25%;">Save</button>
 	                    </div>
-	                </form>
+	                <?=form_close()?>
 				</div>
 
 				<!-- <div class="content-suggestion">

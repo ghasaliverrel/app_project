@@ -64,11 +64,11 @@
 				  	<div class="form-group row">
 				    	<label for="inputPartnerDesc" class="col-sm-4 col-form-label">Partner Description</label>
 				    	<div class="col-sm-8">
-				      		<textarea id="textPartner" type="text" class="form-control category-input" name="partnerDescription" rows="3"><?=(isset($tenants))?$tenants[0]->description:set_value('description')?></textarea>
+				      		<textarea id="textPartner" type="text" class="form-control category-input" name="partnerDescription" rows="3"><?=(isset($tenants))?$tenants[0]->description_partner:set_value('description')?></textarea>
 				    	</div>
 				  	</div>
 
-				  	 <div class="form-group row">
+				  	<!-- <div class="form-group row">
                         <label for="inputPartnerCategory" class="col-sm-4 col-form-label">Partner Category</label>
                         <div class="col-sm-8">  
                             <?php    
@@ -76,7 +76,7 @@
                                 echo form_dropdown('categoryName', $categories, $selected,'class="form-control dropdown-vendor category-input"');
                              ?>
                         </div>
-                    </div>
+                    </div> -->
 
 				  	<div class="form-group row">
 				    	<label for="inputPartnerName" class="col-sm-4 col-form-label">Partner Address</label>
@@ -104,7 +104,7 @@
                         <?php $image_preview = base_url()."assets/img/no-images.png"; ?>
                         <label for="imagePreview" class="col-sm-4 col-form-label">Preview</label>
                         <div class="col-sm-8">
-                            <img style="width: 200px; --aspect-ratio-w: 4; --aspect-ratio-h: 3;" id="imgPreviewPicture" src="<?=(isset($tenants))?$tenants[0]->picture:$image_preview?>" class="profile_pic_cont" />
+                            <img style="width: 200px; --aspect-ratio-w: 4; --aspect-ratio-h: 3;" id="imgPreviewPicture" src="<?=(isset($tenants))?$tenants[0]->picture_partner:$image_preview?>" class="profile_pic_cont" />
                         </div>
                     </div>            
 

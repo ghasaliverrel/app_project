@@ -8,7 +8,7 @@ class Partner extends CI_Controller{
 	}
 
 	public function index(){
-		$data['tenants']=$this->partner_model->get_tenant();
+		$data['tenants']=$this->partner_model->get_tenant_only();
 		$this->load->view('admin/partner_panel',$data);
 	}
 
@@ -32,15 +32,15 @@ class Partner extends CI_Controller{
 		$this->form_validation->set_rules('partnerId','Partner ID','required');
 		$this->form_validation->set_rules('partnerName','Partner Name','required');
 		$this->form_validation->set_rules('partnerDescription','Partner Description','required');
-		$this->form_validation->set_rules('categoryName','Partner Category','required');
+		// $this->form_validation->set_rules('categoryName','Partner Category','required');
 		$this->form_validation->set_rules('partnerAddress','Partner Address','required');
 		$this->form_validation->set_rules('partnerPhone','Partner Phone','required');
 		if($this->form_validation->run()){
 			$data=array(
 				"id_partner"=>$this->input->post("partnerId"),
 				"name_partner"=>$this->input->post("partnerName"),
-				"description"=>$this->input->post("partnerDescription"),
-				"category_id"=>$this->input->post("categoryName"),
+				"description_partner"=>$this->input->post("partnerDescription"),
+				// "category_id"=>$this->input->post("categoryName"),
 				"address_partner"=>$this->input->post("partnerAddress"),
 				"phone_partner"=>$this->input->post("partnerPhone")
 			);

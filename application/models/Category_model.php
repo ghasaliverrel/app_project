@@ -10,7 +10,9 @@ class Category_model extends CI_Model{
 	public function get_tenant($where=array()){
         if(!empty($where)) $this->db->where($where);
 		$this->db->select('*');
-		$this->db->from('partner_tenant');
+		$this->db->from('tr_category_partner AS tr');
+		$this->db->join('partner_tenant as pt','tr.partner_id=pt.id_partner');
+		$this->db->join('partner_category as pc','tr.category_id=pc.id_category');
 		$query=$this->db->get();
 		return $query->result();
 	}

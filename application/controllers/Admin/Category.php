@@ -32,7 +32,7 @@ class Category extends CI_Controller{
 		if($this->form_validation->run()){
 			$data=array(
 				"name"=>$this->input->post("categoryName"),
-				"description"=>$this->input->post("categoryDescription")
+				"description_category"=>$this->input->post("categoryDescription")
 			);
 			if($this->input->post("hidden_id")!=""){
 				$this->category_model->update_data($data,$this->input->post("hidden_id"));
