@@ -4,6 +4,9 @@ class Product extends CI_Controller{
 	public function __construct()
 	{
 		parent::__construct();
+		if($this->session->userdata('id_user')===null){
+			redirect('auth/login');
+		}
 		$this->load->model('partner_model');
 	}
 

@@ -81,10 +81,10 @@ class Partner_model extends CI_Model{
         return $position_name; 
     }
 
-    public function check_exists_data($id=NULL){
-        $this->db->where('category_id',$id);
-        $query=$this->db->get('partner_tenant');
-        $result=$query->result();
-        return $result;
-    }
+    // public function check_exists_data($id=NULL){
+    //     $this->db->where('category_id',$id);
+    //     $query=$this->db->get('partner_tenant');
+    //     $result=$query->result();
+    //     return $result;
+    // }
 }

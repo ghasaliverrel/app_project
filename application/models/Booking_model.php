@@ -42,6 +42,17 @@ class Booking_model extends CI_Model{
         return $partner_name; 
     }
 
+    public function get_user_names() { 
+        $result=$this->db->where('role_id','1')->select('id_user, name')->order_by('name','asc')->get('user')->result_array();
+ 
+        $user_name = array(); 
+        foreach($result as $r) { 
+            $user_name[$r['id_user']] = $r['name']; 
+        } 
+        $user_name[''] = 'Select user name..'; 
+        return $user_name; 
+    }
+
     public function delete_data($id){
 		$this->db->where("id_booking",$id);
 		$this->db->delete("tr_booking");

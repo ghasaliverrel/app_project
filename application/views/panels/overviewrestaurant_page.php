@@ -1,12 +1,12 @@
 <html>
 <head>
-	<title>FoodSteps - Restaurant List</title>
+	<title>FoodSteps - Overview List</title>
 	<?php $this->load->view('header')?>
 </head>
 <body>
 	<div class="heading">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  	<a class="brand-name" href="#">FoodSteps</a>
+		  	<a class="brand-name" href="<?=base_url()?>panels/home">FoodSteps</a>
 		  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  	</button>
@@ -14,11 +14,20 @@
 		    	<!-- Right Float Link -->
 		    	 <ul class="navbar-nav ml-auto brand-links">
 				    <li class="nav-item brand-link">
-			        	<a class="nav-link" href="<?base_url()?>panels/home">Home <span class="sr-only">(current)</span></a>
+			        	<a class="nav-link" href="<?=base_url()?>panels/home">Home <span class="sr-only">(current)</span></a>
 			      	</li>
 			      	<li class="nav-item brand-link">
 			        	<a class="nav-link" href="<?=base_url()?>panels/product">Explore</a>
 			      	</li>
+			      	<?php
+			      		if($this->session->userdata('id_user')!==null){
+			      	?>
+			      		<li class="nav-item brand-link">
+				        	<a class="nav-link btn btn-danger" href="<?=base_url()?>auth/login/logout">Logout</a>
+				      	</li>
+			      	<?php
+			      	}
+			      	?>
 				  </ul>
 		  	</div>
 		</nav>

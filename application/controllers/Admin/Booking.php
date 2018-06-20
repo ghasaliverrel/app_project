@@ -14,6 +14,7 @@ class Booking extends CI_Controller{
 
 	public function add_booking(){
 		$data['tenants']=$this->booking_model->get_partner_names();
+		$data['customers']=$this->booking_model->get_user_names();
 		$this->load->view('admin/booking_form',$data);
 	}
 
@@ -26,7 +27,7 @@ class Booking extends CI_Controller{
 		$this->load->view("admin/booking_form",$data);
 	}
 
-	public function insert_data($id=NULL){
+	public function insert_data(){
 		$this->load->library('form_validation');
 		$this->load->library('session');
 		$this->form_validation->set_rules('bookingName','Booking Name','required');
@@ -34,18 +35,26 @@ class Booking extends CI_Controller{
 		$this->form_validation->set_rules('bookingDate','Booking Date','required');
 		$this->form_validation->set_rules('bookingCount','Amount of People','required');
 		if($this->form_validation->run()){
-			$data['bookings']=$this->booking_model->get_booking(array("id_booking"=>$id));
-			$data=array(
-				"user_id"=>$data['bookings'][0]->user_id,
-				"partner_id"=>$this->input->post("partnerName"),
-				"booking_time"=>$this->input->post("bookingDate"),
-				"booking_count"=>$this->input->post("bookingCount")
-			);
 			if($this->input->post("hidden_id")!=""){
+				$id=$this->input->post("hidden_id");
+				$data['bookings']=$this->booking_model->get_booking(array("id_booking"=>$id));
+				$data=array(
+					"user_id"=>$data['bookings'][0]->user_id,
+					"partner_id"=>$this->input->post("partnerName"),
+					"booking_time"=>$this->input->post("bookingDate"),
+					"booking_count"=>$this->input->post("bookingCount")
+				);
+
 				$this->booking_model->update_data($data,$this->input->post("hidden_id"));
 				$this->session->set_flashdata('category_success', 'Booking Updated Succesfully!');
 				$this->modify_booking($this->input->post("hidden_id"));
 			}else{
+				$data=array(
+					"user_id"=>$this->input->post("bookingName"),
+					"partner_id"=>$this->input->post("partnerName"),
+					"booking_time"=>$this->input->post("bookingDate"),
+					"booking_count"=>$this->input->post("bookingCount")
+				);
 				$this->booking_model->insert_data($data);
 				$this->session->set_flashdata('category_success', 'Booking Inserted Successfully!');
 				redirect('admin/booking');

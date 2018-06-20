@@ -22,4 +22,9 @@ class Login extends CI_Controller{
 			redirect('panels/product');
 		}
 	}
+
+	public function logout(){
+        $this->session->sess_destroy();
+        redirect('auth/login');
+    }
 }

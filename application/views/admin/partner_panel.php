@@ -1,14 +1,12 @@
 <html>
 <head>
-	<title>Admin Panel - Partner Page</title>
+	<title>Admin Panel - Manage Partner</title>
 	<?php $this->load->view('header')?>
-	<!-- <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-	<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script> -->
 </head>
 <body>
 	<div class="heading">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  	<a class="brand-name" href="#">FoodSteps</a>
+		  	<a class="brand-name" href="<?=base_url()?>admin/category">FoodSteps - Admin</a>
 		  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  	</button>
@@ -17,13 +15,14 @@
 		    	<ul class="navbar-nav ml-auto brand-links">
 				    <li class="nav-item brand-link">
 			        	<div class="btn-group">
-						  	<button type="button" class="btn btn-light"><a class="nav-link">Categories</a></button>
+						  	<button type="button" class="btn btn-light"><a class="nav-link">Partner</a></button>
 						  	<button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						    	<span class="sr-only">Toggle Dropdown</span>
 						  	</button>
 						  	<div class="dropdown-menu">
 						    	<a class="nav-link" href="<?=base_url()?>admin/category">Categories</a>
 						    	<a class="nav-link" href="<?=base_url()?>admin/partner">Partner</a>
+						    	<a class="nav-link" href="<?=base_url()?>admin/menu">Menu</a>
 						  	</div>
 						</div>
 			      	</li>

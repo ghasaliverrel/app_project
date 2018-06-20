@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Admin Panel - Insert Booking Page</title>
+	<title>Admin Panel - Insert Menu Page</title>
 	<?php $this->load->view('header')?>
 </head>
 <body>
@@ -15,7 +15,7 @@
 		    	<ul class="navbar-nav ml-auto brand-links">
 				    <li class="nav-item brand-link">
 			        	<div class="btn-group">
-						  	<button type="button" class="btn btn-light"><a class="nav-link">Categories</a></button>
+						  	<button type="button" class="btn btn-light"><a class="nav-link">Menu</a></button>
 						  	<button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						    	<span class="sr-only">Toggle Dropdown</span>
 						  	</button>
@@ -28,7 +28,7 @@
 			      	</li>
 			      	<li class="nav-item brand-link">
 			        	<div class="btn-group">
-						  	<button type="button" class="btn btn-light"><a class="nav-link">Booking</a></button>
+						  	<button type="button" class="btn btn-light"><a class="nav-link">Customers</a></button>
 						  	<button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						    	<span class="sr-only">Toggle Dropdown</span>
 						  	</button>
@@ -46,53 +46,45 @@
 	<div class="content">
 		<div class="content-bg">
 			<div class="content-form">
-				<?=form_open('admin/booking/insert_data')?>
-				  	<div class="form-group row">
-				    	<label for="inputBookingName" class="col-sm-4 col-form-label">Booking Name</label>
+				<?=form_open('admin/menu/insert_data')?>
+					<div class="form-group row">
+				    	<label for="inputMenuName" class="col-sm-4 col-form-label">Menu Name</label>
 				    	<div class="col-sm-8">
-				      		<?php
-				      			if(isset($bookings[0]->id_booking)){
-				      		?>
-				      		 <input type="text" name="bookingName" class="form-control category-input" value="<?=(isset($bookings))?$bookings[0]->name:set_value('name')?>" readonly="">
-				      		<?php
-				      			}else{
-				      				$selected=(isset($bookings))?$bookings[0]->name:'';
-	                                echo form_dropdown('bookingName', $customers, $selected,'class="form-control dropdown-vendor category-input"');
-				      			}
-				      		?>
+				      		<input type="text" name="menuName" class="form-control category-input" value="<?=(isset($menus))?$menus[0]->name_menu:set_value('name_menu')?>">
 				    	</div>
 				  	</div>
 
 				  	<div class="form-group row">
-                        <label for="inputPartnerCategory" class="col-sm-4 col-form-label">Booking Tenant</label>
+                        <label for="inputPartnerName" class="col-sm-4 col-form-label">Partner Name</label>
                         <div class="col-sm-8">  
-                            <?php    
-                                $selected=(isset($bookings))?$bookings[0]->partner_id:'';
+                            <?php  
+                                $selected=(isset($menus))?$menus[0]->partner_id:'';
                                 echo form_dropdown('partnerName', $tenants, $selected,'class="form-control dropdown-vendor category-input"');
-                             ?>
+                            ?>
                         </div>
-                    </div>    
+                    </div>  
 
 				  	<div class="form-group row">
-				    	<label for="inputBookingDate" class="col-sm-4 col-form-label">Booking Date</label>
-				    	<div class="col-sm-8">
-				      		<input type="date" name="bookingDate" class="form-control category-input" value="<?=(isset($bookings))?date('Y-m-d',strtotime($bookings[0]->booking_time)):set_value('bookingDate')?>">
-				      		<!-- <input type="date" class="form-control" name="date_out" value="<?php echo isset($itemOutData->date_out) ? set_value('date_out', date('Y-m-d', strtotime($itemOutData->date_out))) : set_value('date_out'); ?>"> 
-				      		'YY' ."/". 'MM' ."/". 'DD'-->
-				    	</div>
-				  	</div>    
+                        <label for="inputPartnerPosition" class="col-sm-4 col-form-label">Menu Position</label>
+                        <div class="col-sm-8">  
+                            <?php
+                                $selected=(isset($menus))?$menus[0]->position_menu:'';
+                                echo form_dropdown('menuPosition', $positions, $selected,'class="form-control dropdown-vendor category-input"');
+                            ?>
+                        </div>
+                    </div>
 
 				  	<div class="form-group row">
-				    	<label for="inputBookingCount" class="col-sm-4 col-form-label">Count of People</label>
+				    	<label for="inputMenuPrice" class="col-sm-4 col-form-label">Menu Price</label>
 				    	<div class="col-sm-8">
-				      		<input type="number" name="bookingCount" class="form-control category-input" value="<?=(isset($bookings))?$bookings[0]->booking_count:set_value('booking_count')?>">
+				      		<input type="number" name="menuPrice" class="form-control category-input" value="<?=(isset($menus))?$menus[0]->price_menu:set_value('price_menu')?>">
 				    	</div>
 				  	</div>         
 
 				  	<div class="form-group row">
 				    	<label class="col-sm-4 col-form-label"></label>
 				    	<div class="col-sm-8">
-				    		<input type="hidden" id="hidden_id" name="hidden_id" value="<?=(isset($bookings))?$bookings[0]->id_booking:''?>">
+				    		<input type="hidden" id="hidden_id" name="hidden_id" value="<?=(isset($menus))?$menus[0]->id_menu:''?>">
 				      		<button type="submit" class="btn btn-primary btn-submit" style="width: 75%">Submit</button>
 				    	</div>
 				  	</div>
@@ -105,5 +97,6 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
+      	
     });
 </script>

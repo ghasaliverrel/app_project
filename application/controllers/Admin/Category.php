@@ -56,13 +56,13 @@ class Category extends CI_Controller{
 
 	public function delete_category($id=NULL){
 		$this->load->library("session");
-		$this->load->model("partner_model");
-		$check=$this->partner_model->check_exists_data($id);
-		if(empty($check)){
+		// $this->load->model("partner_model");
+		// $check=$this->partner_model->check_exists_data($id);
+		// if(empty($check)){
 			$this->category_model->delete_data($id);
-		}else{
-			$this->session->set_flashdata('category_fail', 'App still contains ad(s)');
-		}
+		// }else{
+		// 	$this->session->set_flashdata('category_fail', 'App still contains ad(s)');
+		// }
 		$this->load->library('user_agent');
 		redirect($this->agent->referrer());
 	}

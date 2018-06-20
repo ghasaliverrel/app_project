@@ -1,12 +1,12 @@
 <html>
 <head>
-	<title>Admin Panel - Insert Category Page</title>
+	<title>Admin Panel - Insert User Page</title>
 	<?php $this->load->view('header')?>
 </head>
 <body>
 	<div class="heading">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  	<a class="brand-name" href="#">FoodSteps</a>
+		  	<a class="brand-name" href="<?=base_url()?>admin/category">FoodSteps - Admin</a>
 		  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  	</button>
@@ -22,6 +22,7 @@
 						  	<div class="dropdown-menu">
 						    	<a class="nav-link" href="<?=base_url()?>admin/category">Categories</a>
 						    	<a class="nav-link" href="<?=base_url()?>admin/partner">Partner</a>
+						    	<a class="nav-link" href="<?=base_url()?>admin/menu">Menu</a>
 						  	</div>
 						</div>
 			      	</li>
