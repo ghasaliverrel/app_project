@@ -28,7 +28,7 @@ class Register extends CI_Controller{
         $register = $this->auth_model->register($data);
 
         $this->session->set_userdata($data);
-		redirect('panels/products');    
+		redirect('panels/product');    
 
 		// if ($register == 1) {
 		// 	$this->session->set_userdata('phoneNumber', $phone);
